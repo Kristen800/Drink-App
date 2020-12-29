@@ -1,22 +1,34 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>MVP</title>
-    <link href="main.css" rel="stylesheet" type="text/css" />
+    <link href="index.css" rel="stylesheet" type="text/css" />
+    <link href="normalize.css" rel="stylesheet">
+    <link href="skeleton.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
   </head>
   <body>
     <div class="container">
-        <h1>Find a random drink.</h1>
+        <h1>Welcome to The Cocktail Lounge</h1>
+        <label for="find-cocktail">Lift your spirits with an app that helps you find the perfect drink.</label>
+        <br>
+        <form>
+        <input type="text" onfocus="this.value=''" name="drinkInput" id="drinkInput" placeholder="Drink Name" required>
+        <br>
+        <input type="submit" id="drink" name="drink" value="Serve">
+        </form>
+        
+        
+        <!--<h1>Find a random drink.</h1>
 
         <form>
-         <input type="submit" id="drink" name="drink" value="Find a drink!">
-        </form>
-
-        <p id ="js-error-message" class="js-error-message"></p>
+         <input type="submit" id="get-drink" name="get-drink" value="Find a drink!">
+        </form>-->
+     <p id ="js-error-message" class="js-error-message"></p>
         <section id="results" class="hidden">
-          <h2>Here's your drink!</h2>
+          <h3>Enjoy your beverage.</h3>
           <ul id="results-list">
           </ul>
           </section>

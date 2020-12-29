@@ -1,12 +1,21 @@
 'use strict';
-function getDrink(){
+/*function getDrink(){
   fetch('https://www.thecocktaildb.com/api/json/v1/1/random.php')
   .then(response => response.json())
   .then(responseJson => 
     displayResults(responseJson.drinks[0]))
   .catch(error => alert('Something went wrong. Try again later.'));
 }
-
+*/
+function getSpecificDrink(){
+  let drinkInput = $('#drinkInput').val();
+  console.log(drinkInput)
+  fetch('https://www.thecocktaildb.com/api/json/v1/1/search.php?s=' + drinkInput)
+  .then(response => response.json())
+  .then(responseJson => 
+    displayResults(responseJson.drinks[0]))
+  .catch(error => alert('Please check your spelling and try again'));
+}
 
 function displayResults(newDrink){
   //if there are previous results, remove them
@@ -29,14 +38,22 @@ function displayResults(newDrink){
     //list with the drink title, image, glass type, ingredients, measurements, and instructions.
     $('#results-list').append(
       `<li>
-      <h3>${newDrink.strDrink}<h3>
-      <img src="${newDrink.strDrinkThumb}" width='150' height='150'>
-     <h4>Ingredients</h4>
+      <h4>${newDrink.strDrink}<h4>
+      <div class="row">
+        <div class="five columns">
+         <img src="${newDrink.strDrinkThumb}" alt="${newDrink.strDrink}" width=200 height=200>
+        </div>
+      
+      <div class="seven columns">
+      <h4>Ingredients:</h4>
       <ul>
       ${ingredients}
        </ul>
+       </div>
+      </div>
       <p>${newDrink.strInstructions}</p>
       <p>Serve in a ${newDrink.strGlass} and enjoy!</p>
+      
       <li>`
     );
     //display the results section
@@ -56,7 +73,8 @@ function displayResults(newDrink){
 function watchForm(){
   $('form').submit(event => {
     event.preventDefault();
-    getDrink();
+   // getDrink();
+    getSpecificDrink();
   });
 }
 
