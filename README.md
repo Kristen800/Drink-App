@@ -10,7 +10,7 @@ CSS
 JavaScript
 jQuery
 
-https://github.com/Kristen800/Drink-App/blob/main/StartPage.png
+![image](https://user-images.githubusercontent.com/73150515/103261267-23b8d000-495e-11eb-9b27-af35370a3cae.png)
 
-https://github.com/Kristen800/Drink-App/blob/main/RecipePage.png
+![image](https://user-images.githubusercontent.com/73150515/103261316-582c8c00-495e-11eb-9bbb-83d853d3adf1.png)
 
