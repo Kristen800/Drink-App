@@ -2,7 +2,6 @@
 
 function getSpecificDrink() {
   let drinkInput = $('#drinkInput').val();
-  console.log(drinkInput)
   fetch('https://www.thecocktaildb.com/api/json/v1/1/search.php?s=' + drinkInput)
     .then(response => response.json())
     .then(responseJson =>
@@ -12,7 +11,6 @@ function getSpecificDrink() {
 
 function displayResults(newDrink) {
   //if there are previous results, remove them
-  console.log(newDrink);
   let ingredients = '';
   $('#results-list').empty();
   //iterate through the drinks array
@@ -76,7 +74,4 @@ function watchForm() {
 
 
 //call the function
-$(function () {
-  console.log('App loaded! Waiting for submit!');
-  watchForm();
-});
+$(watchForm);
